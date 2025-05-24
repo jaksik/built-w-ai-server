@@ -5,14 +5,13 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
 
 // Middleware
-// app.use(cors({
-//   // Allow requests only from your Chrome extension
-//   origin: ['chrome-extension://odemdolfifdiccpjognfiajokpmmffbo'],
-//   methods: ['GET', 'POST', 'DELETE']
-// }));
+app.use(cors({
+  // Allow requests only from your Chrome extension
+  origin: ['chrome-extension://odemdolfifdiccpjognfiajokpmmffbo'],
+  methods: ['GET', 'POST', 'DELETE']
+}));
 app.use(express.json());
 
 // Debug: Check if environment variables are loaded
